@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+var mario = {
+	description: "Small and jumpy. Likes princesses.",
+	health: 100,
+	height: 10,
+	weight: 3,
+	speed: 12,
+};
+
+var bowser = {
+	description: "Big and green, Hates princesses.",
+	health: 1000,
+	height: 16,
+	weight: 6,
+	speed: 4,
+};
+
+var boss_battle = function (x) {
+	if (mario.health <= 0) {
+		ans=0
+		console.log("You are dead! Game over.");
+		return;
+	} else if (bowser.health <= 0) {
+		ans=0
+		console.log("You win!!!!!!");
+		return;
+	}
+	if (x == 1) {
+		let hit = mario.height + mario.weight + mario.speed / 2;
+		bowser.health -= hit;
+	} else if(x === 2) {
+		let hit = bowser.height + bowser.weight + bowser.speed / 2;
+		mario.health -= hit;
+	}
+	console.log(mario.health);
+};
+let ans=3
+
+while (mario.health > 0 || bowser.health > 0 && ans) {
+	ans = prompt("Who will hit? 1:Mario 2:Bowser");
+	boss_battle(Number(ans));
+}
+
+	</script>
+</body>
+</html>

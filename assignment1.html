@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let greeting="hello"
+        let name="world"
+        let total=greeting+" "+name
+        alert(`${greeting} ${name}`)
+        alert(total)
+        let reg1=/l/g
+        let reg2=/o/g
+        total=total.replace(reg1,"1")
+        total=total.replace(reg2,"0")
+        alert(total);
+        function reverse(val){
+            let reg1=/1/g
+            let reg2=/0/g
+            val=val.replace(reg1,"l")
+            val=val.replace(reg2,"o")
+            return val
+        }
+        alert(reverse(total))
+    </script>
+</body>
+</html>
